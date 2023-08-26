@@ -31,8 +31,8 @@ body {
 .container {
     column-width: 350px;
     column-count: 3;
-    column-gap: 30px;
-    padding: 30px;
+    column-gap: 20px;
+    padding: 20px;
     /* column-rule-style: solid; */
     /* height: 1000px; */
     /* column-count: auto; */
