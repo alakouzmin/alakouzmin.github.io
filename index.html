@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script>
-    $(document).ready(function () {
+ /*   $(document).ready(function () {
       $("#child1").hover(function () {
         $('li').fadeTo(200, 0.15);
         $('#child2').fadeTo(200, 0.15);
@@ -171,6 +171,27 @@
           },100)
         });
     });
+    */
+ <script>
+    $(document).ready(function() {
+      // 通用悬停效果函数
+      function setupHoverEffect(elementId) {
+        $(elementId).hover(
+          function() {
+            $('li, #child1, #child2, #child3, #child4, #child5, #child6').not(elementId).fadeTo(200, 0.15);
+            $(elementId).animate({ width: '355', height: '255' }, 200);
+          },
+          function() {
+            $('li, #child1, #child2, #child3, #child4, #child5, #child6').not(elementId).fadeTo(100, 1);
+            $(elementId).animate({ width: '350', height: '250' }, 100);
+          }
+        );
+      }
+
+      // 为所有图片设置悬停效果
+      ['#child1', '#child2', '#child3', '#child4', '#child5', '#child6'].forEach(setupHoverEffect);
+    });
+  </script>
   </script>
 </head>
 
